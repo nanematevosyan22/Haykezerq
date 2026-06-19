@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Էրեբունիից Երևան — Ինտերակտիվ Հարթակ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Հայկեզերք ֊ Էրեբունի</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Գլխավոր</a></li>
+                <li><a href="#timeline-section">Ժամանակագրություն</a></li>
+                <li><a href="#characters-section">Կերպարներ</a></li>
+                <li><a href="#stats-section">Ժամանակակից Էրեբունի</a></li>
+                <li><a href="#plan-section">Քարտեզ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 id="event-title">Էրեբունի Ամրոց</h1>
+            <p id="event-subtitle">Մ.թ.ա. 782 — Երևանի Ծննդականը</p>
+            <p id="event-description">Բեռնվում է պատմական ներածությունը...</p>
+        </div>
+    </section>
+	
+<div class="rotate-3d-wrapper">
+    <div class="rotate-3d-container" id="tablet3d">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Urartian_Tablet03.jpg/500px-Urartian_Tablet03.jpg" alt="Էրեբունի Սեպագիր Արձանագրություն" draggable="false">
+    </div>
+</div>
+    <section id="timeline-section" class="section">
+        <h2>Դարաշրջանների Ժամանակացույց</h2>
+        <div id="timeline-container">
+            <p class="loading">Պատմական շերտերը բեռնվում են...</p>
+        </div>
+    </section>
+
+    <section id="characters-section" class="section">
+        <h2>Առանցքային Կերպարներ ու Վկայություններ</h2>
+        <div id="characters-container">
+            <p class="loading">Կերպարները բեռնվում են...</p>
+        </div>
+    </section>
+
+    <section id="stats-section" class="section">
+        <h2>Ժամանակակից Էրեբունի համայնքը</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>126,500</h3>
+                <p>Բնակչություն (2016 թ.)</p>
+            </div>
+            <div class="stat-card">
+                <h3>120 Հեկտար</h3>
+                <p>Պատմական Արգելոցի տարածք</p>
+            </div>
+            <div class="stat-card">
+                <h3>Արդյունաբերություն</h3>
+                <p>Երևանի խոշոր արդյունաբերական կենտրոն</p>
+            </div>
+        </div>
+        <div class="sub-districts">
+            <h3>Թաղամասի փոքր շրջանները.</h3>
+            <p>Նոր Արեշ, Սարթաղ, Վարդաշեն, Մուշավան, Վերին Ջրաշեն, Նոր Բուտանիա:</p>
+        </div>
+    </section>
+<section id="plan-section" class="section">
+    <h2 id="plan-main-title">Ամրոցի Ճարտարապետություն</h2>
+    <div class="plan-wrapper">
+        <div class="plan-container">
+            <img src="" alt="Էրեբունի ամրոցի հատակագիծը" id="castlePlan">
+        </div>
+        <div class="plan-info">
+            <h3>Ճարտարապետական Կառուցվածքը</h3>
+            <p>Արին-բերդ բլրի վրա կառուցված այս հզոր միջնաբերդն ունի եռանկյունաձև կառուցվածք և բաժանված է երեք հիմնական մասի.</p>
+            <ul>
+                <li><strong>Պալատական մաս:</strong> Արքայական դահլիճներ և բնակելի սենյակներ:</li>
+                <li><strong>Կրոնական մաս:</strong> Գերագույն աստված Խալդիի և Թեյշեբա աստծո տաճարները:</li>
+                <li><strong>Տնտեսական մաս:</strong> Շտեմարաններ՝ մեծ կարասներով, որտեղ պահվում էր գինի և հացահատիկ:</li>
+            </ul>
+        </div>
+    </div>
+</section>
+    <section id="map-section" class="section">
+        <h2>Աշխարհագրական դիրք (Արին-բերդ)</h2>
+        <div id="map"></div>
+		
+    </section>
+
+    <footer>
+        <p>&copy; 2026 «Հայկեզերք» պատմական նախագիծ-Մաթեւոսեան Նանե</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
