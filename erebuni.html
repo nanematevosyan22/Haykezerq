@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Էրեբունի-Երևան հիմնադրման սեպագիր արձանագրություն</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #f9f6f0;
@@ -18,7 +13,6 @@
             line-height: 1.6;
             padding: 20px;
         }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -28,8 +22,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border: 1px solid #e6dfd3;
         }
-
-        /* Վերնագրեր */
         h1 {
             color: #8b4513;
             text-align: center;
@@ -38,7 +30,6 @@
             border-bottom: 2px solid #d2b48c;
             padding-bottom: 15px;
         }
-
         h2 {
             color: #a0522d;
             font-size: 1.5rem;
@@ -47,19 +38,27 @@
             display: flex;
             align-items: center;
         }
-
-        h2::before {
-            content: "❖ ";
-            color: #d2b48c;
-            margin-right: 8px;
+        h2::before { content: "❖ "; color: #d2b48c; margin-right: 8px; }
+        p { margin-bottom: 15px; text-align: justify; }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid #d2b48c;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
         }
 
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        /* Սեպագրերի նոր և կոկիկ բլոկ */
         .cuneiform-container {
             background-color: #fbf8f3;
             border: 1px solid #d2b48c;
@@ -68,25 +67,14 @@
             padding: 20px;
             margin: 25px 0;
         }
-
         .cuneiform-row {
             display: flex;
             flex-direction: column;
             padding: 12px 0;
             border-bottom: 1px dashed #e6dfd3;
         }
-
-        .cuneiform-row:last-child {
-            border-bottom: none;
-        }
-
-        .line-num {
-            font-weight: bold;
-            color: #8b4513;
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
-
+        .cuneiform-row:last-child { border-bottom: none; }
+        .line-num { font-weight: bold; color: #8b4513; font-size: 0.9rem; margin-bottom: 4px; }
         .cuneiform-glyphs {
             font-family: 'Noto Sans Cuneiform', monospace, sans-serif;
             font-size: 1.5rem;
@@ -94,31 +82,12 @@
             color: #2b2017;
             margin-bottom: 4px;
         }
-
         .cuneiform-translit {
             font-style: italic;
             font-size: 1rem;
             color: #555;
             padding-left: 5px;
         }
-
-        /* Գաղափարագրերի (ԼՈՒԳԱԼ, ՈՒՌՈՒ) ոճավորումը տրանսլիտում */
-        .logogram {
-            font-variant: small-caps;
-            font-weight: bold;
-            color: #a0522d;
-        }
-
-        .translation-title {
-            font-weight: bold;
-            color: #8b4513;
-            margin-top: 25px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
-
         .translation-text {
             font-style: italic;
             font-size: 1.1rem;
@@ -129,31 +98,19 @@
             border-radius: 6px;
             line-height: 1.7;
         }
-
-        /* Ինֆո աղյուսակ */
         .info-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 25px;
             margin-bottom: 25px;
         }
-
         .info-table th, .info-table td {
             border: 1px solid #e6dfd3;
             padding: 12px 15px;
             text-align: left;
         }
-
-        .info-table th {
-            background-color: #8b4513;
-            color: white;
-            font-weight: 600;
-        }
-
-        .info-table tr:nth-child(even) {
-            background-color: #fdfbf7;
-        }
-
+        .info-table th { background-color: #8b4513; color: white; font-weight: 600; }
+        .info-table tr:nth-child(even) { background-color: #fdfbf7; }
         .highlight-box {
             background-color: #fff3cd;
             border: 1px solid #ffeeba;
@@ -161,23 +118,38 @@
             padding: 15px;
             border-radius: 6px;
             margin: 20px 0;
-            font-size: 0.95rem;
+        }
+        
+        /* Նավիգացիայի կոճակ */
+        .nav-btn-container {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #e6dfd3;
+        }
+        .next-page-btn {
+            display: inline-block;
+            background-color: #8b4513;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+        .next-page-btn:hover {
+            background-color: #a0522d;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            h2 {
-                font-size: 1.2rem;
-            }
-            .cuneiform-glyphs {
-                font-size: 1.2rem;
-            }
+        .sources-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e6dfd3;
         }
+        .sources-title { font-weight: bold; color: #555; font-size: 1rem; margin-bottom: 10px; }
+        .sources-list { list-style-type: none; padding-left: 5px; font-size: 0.9rem; color: #666; }
+        .sources-list li { margin-bottom: 6px; }
+        .sup-link { color: #a0522d; font-weight: bold; text-decoration: none; margin-left: 2px; }
     </style>
 </head>
 <body>
@@ -185,85 +157,79 @@
 <div class="container">
     <h1>Էրեբունի ամրոցի հիմնադրման սեպագիր արձանագրություն</h1>
      
-    <p><strong>Էրեբունի-Երևան հիմնադրման սեպագիր արձանագրություն</strong>, Երևան քաղաքի հարավ-արևելյան եզրին տեղակայված Արին-բերդ բլրի վրա գտնվող Էրեբունի ամրոցի հիմնադրման մասին վավերագիր արձանագրություն։ Այն փորագրվել է Վանի թագավորության (Ուրարտու) Արգիշտի Ա թագավորի կողմից մ.թ.ա. 782 թվականին:</p>
+    <p><strong>Էրեբունի-Երևան հիմնադրման սեպագիր արձանագրություն</strong>, Երևան քաղաքի հարավ-արևելյան եզրին տեղակայված Արին-բերդ բլրի վրա գտնվող Էրեբունի ամրոցի հիմնադրման մասին վավերագիր արձանագրություն։ Այն փորագրվել է Վանի թագավորության (Ուրարտու) Արգիշտի Ա թագավորի կողմից մ.թ.ա. 782 թվականին<a href="#src-1" class="sup-link">[1]</a>։</p>
+
+    <div class="image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Urartian_cuneiform_inscription_from_Erebuni_fortress.jpg" alt="Էրեբունի բերդի սեպագիր արձանագրությունը">
+        <div class="image-caption">Բնագիր սեպագիր արձանագրությունը՝ փորագրված բազալտե քարի վրա (Մ.թ.ա. 782 թ.)</div>
+    </div>
 
     <div class="highlight-box">
-        <strong>Պատմական փաստ:</strong> Այս արձանագրությունը հանդիսանում է Երևանի «ծննդականը», որով ապացուցվում է, որ Երևանը հանդիսանում է աշխարհի հնագույն քաղաքներից մեկը (ավելի հին, քան Հռոմը):
+        <strong>Պատմական փաստ:</strong> Այս արձանագրությունը հանդիսանում է Երևանի «ծննդականը», որով ապացուցվում է, որ Երևանը հանդիսանում է աշխարհի հնագույն քաղաքներից մեկը (ավելի հին, քան Հռոմը)<a href="#src-2" class="sup-link">[2]</a>։
     </div>
 
     <h2>Արձանագրության տվյալները</h2>
     <table class="info-table">
-        <tr>
-            <th>Հեղինակ</th>
-            <td>Արգիշտի Ա (Վանի թագավոր)</td>
-        </tr>
-        <tr>
-            <th>Տարեթիվ</th>
-            <td>մ.թ.ա. 782 թվական</td>
-        </tr>
-        <tr>
-            <th>Լեզու</th>
-            <td>Ուրարտերեն (ուրարտական սեպագիր)</td>
-        </tr>
-        <tr>
-            <th>Գտնվելու վայրը</th>
-            <td>Էրեբունի թանգարան, Երևան, Հայաստան</td>
-        </tr>
+        <tr><th>Հեղինակ</th><td>Արգիշտի Ա (Վանի թագավոր)</td></tr>
+        <tr><th>Տարեթիվ</th><td>մ.թ.ա. 782 թվական</td></tr>
+        <tr><th>Լեզու</th><td>Ուրարտերեն (ուրարտական սեպագիր)<a href="#src-1" class="sup-link">[1]</a></td></tr>
+        <tr><th>Գտնվելու վայրը</th><td>Էրեբունի թանգարան, Երևան, Հայաստան</td></tr>
     </table>
 
     <h2>Բնագիր սեպագիր տեքստը և ընթերցումը</h2>
     
     <div class="cuneiform-container">
-        <!-- Տող 1 -->
         <div class="cuneiform-row">
             <span class="line-num">Տող 1</span>
-            <div class="cuneiform-glyphs">𒀭 𒄬 𒁲 𒂊 𒈗 𒂊 𒄿 ᓂ 𒂊 $&$- 𒂊</div>
-            <div class="cuneiform-translit"><sup>d</sup>ḫal-di-e <span class="logogram">LUGAL</span>-e i-ni-e <span class="logogram">É</span>.GAL-e</div>
+            <div class="cuneiform-glyphs">𒀭 𒄬 𒁲 𒂊 𒈗 𒂊 𒄿 ᓂ 𒂊 𒂍 𒃲 𒂊</div>
+            <div class="cuneiform-translit">chal-di-e lugal-e i-ni-e e-gal-e</div>
         </div>
-
-        <!-- Տող 2 -->
         <div class="cuneiform-row">
             <span class="line-num">Տող 2</span>
-            <div class="cuneiform-glyphs">𒅈 Ꭹ 𒅖 𒋾 𒊺 𒂊 𒀀 𒈗 𒂊 𒈬 𒌑 𒉌</div>
-            <div class="cuneiform-translit"><sup>m</sup>ar-gi-iš-ti-še <sup>m</sup>me-nu-a-ḫi-ni-še</div>
+            <div class="cuneiform-glyphs">𒅈 Ꭹ 𒅖 提 𒊺 𒂊 𒀀 𒈗 𒂊 𒈬 𒌑 𒉌</div>
+            <div class="cuneiform-translit">ar-gi-iš-ti-še me-nu-a-ḫi-ni-še</div>
         </div>
-
-        <!-- Տող 3 -->
         <div class="cuneiform-row">
             <span class="line-num">Տող 3</span>
-            <div class="cuneiform-glyphs">𒂊 ⵔᱮ 𒁍  steeple 𒌷 𒁀 𒀀 𒌑 𒉌</div>
-            <div class="cuneiform-translit">é-re-bu-ni <span class="logogram">URU</span> mu-ú-ni ba-a-ú-ni</div>
+            <div class="cuneiform-glyphs">𒂊 ⵔե 𒁍 𒉌 𒌷 𒁀 𒀀 𒌑 𒉌</div>
+            <div class="cuneiform-translit">e-re-bu-ni uru mu-u-ni ba-a-u-ni</div>
         </div>
-
-        <!-- Տող 4 -->
         <div class="cuneiform-row">
             <span class="line-num">Տող 4</span>
             <div class="cuneiform-glyphs">𒀀 𒈾 𒀭 𒄬 𒁲 𒂊 𒈗 𒂊 𒋼 𒀀 𒇷</div>
-            <div class="cuneiform-translit">a-na <sup>d</sup>ḫal-di-e <span class="logogram">LUGAL</span>-e te-a-li</div>
+            <div class="cuneiform-translit">a-na chal-di-e lugal-e te-a-li</div>
         </div>
-
-        <!-- Տող 5 -->
         <div class="cuneiform-row">
             <span class="line-num">Տող 5</span>
-            <div class="cuneiform-glyphs">𒁀 𒀀 𒌑 𒉌 𒂊 𒋼 𒀀 𒇷 𒈗 𒈗 𒂊</div>
-            <div class="cuneiform-translit">ba-a-ú-ni-e te-a-li <span class="logogram">LUGAL PAN LUGAL</span>-e</div>
+            <div class="cuneiform-glyphs"> Contrast 𒁀 𒀀 𒌑 𒉌 𒂊 𒋼 𒀀 𒇷 𒈗 𒈗 𒂊</div>
+            <div class="cuneiform-translit">ba-a-u-ni-e te-a-li lugal pan lugal-e</div>
         </div>
-
-        <!-- Տող 6 -->
         <div class="cuneiform-row">
             <span class="line-num">Տող 6</span>
-            <div class="cuneiform-glyphs">𒈗 𒂊 𒌷 𒌅 𒍑 𒉺 𒀀 𒌷</div>
-            <div class="cuneiform-translit"><span class="logogram">LUGAL</span> ḫa-na-ni <span class="logogram">URU</span> tu-uš-pa-a <span class="logogram">URU</span></div>
+            <div class="cuneiform-glyphs">𒈗 𒂊 𒌷 撕 𒍑 𒉺 𒀀 𒌷</div>
+            <div class="cuneiform-translit">lugal cha-na-ni uru tu-uš-pa-a uru</div>
         </div>
     </div>
 
     <h2>Հայերեն թարգմանություն</h2>
     <div class="translation-text">
-        «Խալդ աստծո մեծությամբ Արգիշտին՝ Մենուայի որդին, այս անառիկ ամրոցը կառուցեց և անվանեց Էրեբունի՝ ի փառս Բիայնիլի երկրի և ի սարսափ թշնամի երկրների։ Հողը ամայի էր, ձեռնարկեցի ես այնտեղ հզոր գործեր... Արգիշտին՝ Մենուայի որդին, հզոր թագավոր, թագավոր մեծ, թագավոր Բիայնիլի երկրի, տերը Տուշպա քաղաքի»։
+        «Խալդ աստծո մեцовթյամբ Արգիշտին՝ Մենուայի որդին, այս անառիկ ամրոցը կառուցեց և անվանեց Էրեբունի՝ ի փառս Բիայնիլի երկրի և ի սարսափ թշնամի երկրների։ Հողը ամայի էր, ձեռնարկեցի ես այնտեղ հզոր գործեր... Արգիշտին՝ Մենուայի որդին, հզոր թագավոր, թագավոր մեծ, թագավոր Բիայնիլի երկրի, տերը Տուշպա քաղաքի»<a href="#src-2" class="sup-link">[2]</a>։
     </div>
 
     <h2>Հայտնաբերումը</h2>
     <p>Արձանագրությունը հայտնաբերվել է 1950 թվականին հնագետ Կոնստանտին Հովհաննիսյանի գլխավորած պեղումների ժամանակ Արին-բերդ բլրի վրա։ Այն փորագրված է եղել բազալտե քարի վրա, որը պահպանվել է գրեթե անվնաս վիճակում։ Այս բացահայտումը շրջադարձային եղավ Երևանի պատմության ուսումնասիրության համար:</p>
+
+    <div class="nav-btn-container">
+        <a href="name_evolution.html" class="next-page-btn">Իմանալ ավելին անվան փոխակերպման մասին ➔</a>
+    </div>
+
+    <div class="sources-section">
+        <div class="sources-title">Օգտագործված աղբյուրներ՝</div>
+        <ul class="sources-list">
+            <li id="src-1">[1] Հայկական սովետական հանրագիտարան, «Էրեբունի» հոդված, հատոր 4։</li>
+            <li id="src-2">[2] Էրեբունի պատմահնագիտական արգելոց-թանգարանի պաշտոնական տվյալներ (erebuni.am)։</li>
+        </ul>
+    </div>
 </div>
 
 </body>
