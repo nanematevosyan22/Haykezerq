@@ -11,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -51,13 +50,13 @@ body {
     color: #ffb703;
 }
 
-
 .hero-section {
     padding: 100px 10px 20px 10px;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(18, 18, 18, 1)), 
                 url('https://d23etkghwwc7sj.cloudfront.net/uploads/sightseeing/images/6689307fecfb5_%D5%A7%D6%801.png') center center/cover;
 }
+
 #event-title {
     font-size: 48px;
     color: #ffffff;
@@ -77,7 +76,6 @@ body {
     font-size: 18px;
     color: #cccccc;
 }
-
 
 .section {
     padding: 80px 20px;
@@ -109,13 +107,13 @@ body {
     margin-bottom: 20px;
     border-radius: 0 8px 8px 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 .timeline-card h3 {
     color: #ffb703;
     margin-bottom: 5px;
 }
-
 
 #characters-container {
     display: grid;
@@ -129,6 +127,7 @@ body {
     border-radius: 8px;
     padding: 25px;
     transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
 }
 
 .char-card:hover {
@@ -154,9 +153,7 @@ body {
     justify-content: center;
     font-weight: bold;
     font-size: 18px;
-    
     overflow: hidden; 
-    
     transform: translateZ(40px); 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
@@ -217,7 +214,6 @@ footer {
 }
 
 .rotate-3d-container {
-
     margin: 0 auto;
     perspective: 1000px;
     cursor: grab;
@@ -236,7 +232,6 @@ footer {
     border-radius: 12px;
     border: 2px solid #ffb703;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-
     user-select: none; 
     -webkit-user-drag: none;
 }
@@ -247,12 +242,12 @@ footer {
     font-size: 14px;
     font-style: italic;
 }
-.plan-container{
-	display: flex;
+
+.plan-container {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 #plan-section {
     background-color: #121212;
@@ -266,7 +261,6 @@ footer {
     margin-top: 40px;
 }
 
-
 .plan-container {
     flex: 1;
     min-width: 300px;
@@ -278,8 +272,6 @@ footer {
     border: 2px solid #ffb703;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     background-color: #1a1a1a;
-    
-
     transform-style: preserve-3d;
     transition: transform 0.1s ease-out;
 }
@@ -321,7 +313,6 @@ footer {
     margin-bottom: 20px;
 }
 
-
 .plan-info ul {
     list-style: none;
     padding-left: 0;
@@ -335,7 +326,6 @@ footer {
     color: #e0e0e0;
     line-height: 1.5;
 }
-
 
 .plan-info ul li::before {
     content: '🔶';
