@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Էրեբունի-Երևան հիմնադրման սեպագիր արձանագրություն</title>
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -60,31 +59,63 @@
             text-align: justify;
         }
 
-        .cuneiform-box {
-            background-color: #f4ebe1;
+        /* Սեպագրերի նոր և կոկիկ բլոկ */
+        .cuneiform-container {
+            background-color: #fbf8f3;
+            border: 1px solid #d2b48c;
             border-left: 5px solid #8b4513;
+            border-radius: 6px;
             padding: 20px;
             margin: 25px 0;
-            border-radius: 4px;
         }
 
-        .cuneiform-text {
-            font-family: monospace, sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            word-break: break-all;
-            margin-bottom: 15px;
-            color: #4a3b32;
-            line-height: 1.8;
+        .cuneiform-row {
+            display: flex;
+            flex-direction: column;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e6dfd3;
         }
 
-   
+        .cuneiform-row:last-child {
+            border-bottom: none;
+        }
+
+        .line-num {
+            font-weight: bold;
+            color: #8b4513;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .cuneiform-glyphs {
+            font-family: 'Noto Sans Cuneiform', monospace, sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            color: #2b2017;
+            margin-bottom: 4px;
+        }
+
+        .cuneiform-translit {
+            font-style: italic;
+            font-size: 1rem;
+            color: #555;
+            padding-left: 5px;
+        }
+
+        /* Գաղափարագրերի (ԼՈՒԳԱԼ, ՈՒՌՈՒ) ոճավորումը տրանսլիտում */
+        .logogram {
+            font-variant: small-caps;
+            font-weight: bold;
+            color: #a0522d;
+        }
+
         .translation-title {
             font-weight: bold;
             color: #8b4513;
-            margin-top: 15px;
+            margin-top: 25px;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             letter-spacing: 1px;
         }
 
@@ -93,9 +124,10 @@
             font-size: 1.1rem;
             color: #2c2c2c;
             background: #fffcf7;
-            padding: 15px;
+            padding: 20px;
             border: 1px dashed #d2b48c;
-            border-radius: 4px;
+            border-radius: 6px;
+            line-height: 1.7;
         }
 
         /* Ինֆո աղյուսակ */
@@ -132,7 +164,6 @@
             font-size: 0.95rem;
         }
 
-
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -143,6 +174,9 @@
             h2 {
                 font-size: 1.2rem;
             }
+            .cuneiform-glyphs {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -150,7 +184,7 @@
 
 <div class="container">
     <h1>Էրեբունի ամրոցի հիմնադրման սեպագիր արձանագրություն</h1>
-    
+     
     <p><strong>Էրեբունի-Երևան հիմնադրման սեպագիր արձանագրություն</strong>, Երևան քաղաքի հարավ-արևելյան եզրին տեղակայված Արին-բերդ բլրի վրա գտնվող Էրեբունի ամրոցի հիմնադրման մասին վավերագիր արձանագրություն։ Այն փորագրվել է Վանի թագավորության (Ուրարտու) Արգիշտի Ա թագավորի կողմից մ.թ.ա. 782 թվականին:</p>
 
     <div class="highlight-box">
@@ -178,18 +212,49 @@
     </table>
 
     <h2>Բնագիր սեպագիր տեքստը և ընթերցումը</h2>
-    <div class="cuneiform-box">
-        <div class="cuneiform-text">
-            ¹ 𒀭 𒄬 𒁲 𒂊 𒈗 𒂊 𒄿 ᓂ  Decide 𒂊<br>
-            ² 𒅈 Ꭹ 𒅖 𒋾 𒊺 𒂊 𒀀 combine 𒂊<br>
-            ³ 𒂊  briefings 𒁀 𒀀 𒉌 𒌷 𒂊  BadRequest 𒂊<br>
-            ⁴ 𒀀 𒈾 𒀭 𒄬 𒁲 𒂊 𒈗 𒂊 𒋼 𒀀 𒇷<br>
-            ⁵ 𒁀 𒀀  bookcases 𒉌 𒂊 𒋼 𒀀 𒇷 𒈗 𒈗 𒂊<br>
-            ⁶ 𒀭 𒉡 𒂊 𒌷 𒌅 𒍑 𒉺 𒀀 𒌷
+    
+    <div class="cuneiform-container">
+        <!-- Տող 1 -->
+        <div class="cuneiform-row">
+            <span class="line-num">Տող 1</span>
+            <div class="cuneiform-glyphs">𒀭 𒄬 𒁲 𒂊 𒈗 𒂊 𒄿 ᓂ 𒂊 $&$- 𒂊</div>
+            <div class="cuneiform-translit"><sup>d</sup>ḫal-di-e <span class="logogram">LUGAL</span>-e i-ni-e <span class="logogram">É</span>.GAL-e</div>
         </div>
-        
-        <div class="translation-title">Տառադարձություն (Տրանսլիտերացիա).</div>
-        <p><sup>1</sup> Խալդինե ԼՈՒԳԱԼ-ե ի-նի է-ԲԱ-ՆԻ-ե <sup>2</sup> Արգիշտիշե Ա-ԼՈՒ-ՆԻ-ե <sup>3</sup> է-ՌԵ-ԲՈՒ-ՆԻ ՈՒՌՈՒ-ե ԲԱ-ԱՈՒ-ՆԻ <sup>4</sup> ա-նա Խալդինե ԼՈՒԳԱԼ-ե ՏԵ-Ա-ԼԻ <sup>5</sup> ԲԱ-ԱՈՒ-ՆԻ-ե ՏԵ-Ա-ԼԻ ԼՈՒԳԱԼ ԼՈՒԳԱԼ-ե <sup>6</sup> ԼՈՒԳԱԼ ՏՈՒ-ՈՒՇ-ՊԱ ՈՒՌՈՒ-ե:</p>
+
+        <!-- Տող 2 -->
+        <div class="cuneiform-row">
+            <span class="line-num">Տող 2</span>
+            <div class="cuneiform-glyphs">𒅈 Ꭹ 𒅖 𒋾 𒊺 𒂊 𒀀 𒈗 𒂊 𒈬 𒌑 𒉌</div>
+            <div class="cuneiform-translit"><sup>m</sup>ar-gi-iš-ti-še <sup>m</sup>me-nu-a-ḫi-ni-še</div>
+        </div>
+
+        <!-- Տող 3 -->
+        <div class="cuneiform-row">
+            <span class="line-num">Տող 3</span>
+            <div class="cuneiform-glyphs">𒂊 ⵔᱮ 𒁍  steeple 𒌷 𒁀 𒀀 𒌑 𒉌</div>
+            <div class="cuneiform-translit">é-re-bu-ni <span class="logogram">URU</span> mu-ú-ni ba-a-ú-ni</div>
+        </div>
+
+        <!-- Տող 4 -->
+        <div class="cuneiform-row">
+            <span class="line-num">Տող 4</span>
+            <div class="cuneiform-glyphs">𒀀 𒈾 𒀭 𒄬 𒁲 𒂊 𒈗 𒂊 𒋼 𒀀 𒇷</div>
+            <div class="cuneiform-translit">a-na <sup>d</sup>ḫal-di-e <span class="logogram">LUGAL</span>-e te-a-li</div>
+        </div>
+
+        <!-- Տող 5 -->
+        <div class="cuneiform-row">
+            <span class="line-num">Տող 5</span>
+            <div class="cuneiform-glyphs">𒁀 𒀀 𒌑 𒉌 𒂊 𒋼 𒀀 𒇷 𒈗 𒈗 𒂊</div>
+            <div class="cuneiform-translit">ba-a-ú-ni-e te-a-li <span class="logogram">LUGAL PAN LUGAL</span>-e</div>
+        </div>
+
+        <!-- Տող 6 -->
+        <div class="cuneiform-row">
+            <span class="line-num">Տող 6</span>
+            <div class="cuneiform-glyphs">𒈗 𒂊 𒌷 𒌅 𒍑 𒉺 𒀀 𒌷</div>
+            <div class="cuneiform-translit"><span class="logogram">LUGAL</span> ḫa-na-ni <span class="logogram">URU</span> tu-uš-pa-a <span class="logogram">URU</span></div>
+        </div>
     </div>
 
     <h2>Հայերեն թարգմանություն</h2>
